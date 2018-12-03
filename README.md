@@ -61,36 +61,36 @@ Fill out this template in place in the README of your own fork of the assignment
 
 ## 1. Project Title
 
-*How is your project/application called?*
+Multiplayer Battleship
 
 ## 2. Team
 
-*Who worked on this project/application?*
+I worked alone crerating this project.
 
 ## 3. Project Objective
 
-*Describe what you set out to achieve. What [micro:bit](https://microbit.org/) capabilities were necessary and/or useful for your implementation.*
+Earlier in the semester I wrote a Javascript Battleship game for my computer science class. The program was a remake of the popular multiplayer game battleship. The game allowed you to choose the placement of your own ships and compete against a cpu which generated random ships. The cpu had different difficulty levels each with different algorithms that could accurately sink your ships. My goal for this project was to try and create a similar version of my game that allows you to play against another player instead of a cpu. 
 
 ## 4. Research
 
-*What sources did you consult (Web, instructor, etc)? Don't plagiarize; give credit where it's due!*
+For the construction of this project I got help from Professor Ivo, Professor Rajan, and followed the tutorial from chapter 10 of the book Networking With The Micro:Bit. https://microbit.nominetresearch.uk/networking-book/networking_with_the_microbit.pdf 
 
 ## 5. Design
 
-*Describe your design briefly and reference any supporting materials in the [assets](assets) folder. Talk about input, output, processing, and storage (aka memory) in your design.*
+Given that the microbit only has a 5x5 matrix I had to make adjustments to my previous 10x10 game I created in javascript. The game starts off by using a while loop to randomly generate 5 ships in a 4x5 matrix. The microbit will output an LED signal to show the location of your ships. The function calls for all ships to be placed in the bottom four rows of the LED matrix allowing room in the top row to display whether the shot fired was a hit or miss. The microbits connect remotely since they both have the same radio group number. When firing a shot, the microbit takes input from the A button pressed, B button pressed, as well as the A+B button pressed. Pressing the A button on the microbit changes the fire_x or the colomn in which you wish to fire a shot. Each press moves the fire_x position to the right and when pressed on the last LED to the right will reset it on the left. Where as pressing the B button changes the fire_y or the row you wish to fire a shot. Pressing A+B at the same time fires your shot and sends a radio number to the enemy that will go though an if statement to determine if the shot hit or miss. If the shot landed, an LED will light up on the top left corner of the matrix and the LED of the sunken ship will unplot. 
 
 ## 6. Development
 
-*Keep a list of your development activities here, regardless of their success. Reference any supporting materials or external sources.*
+My original plan was to follow the blocks tutuorial and convert it to Micropython. Though after help and discussion from the professor, it was decided that blocks code would be sufficient since I worked alone on the project.
 
 ## 7. Testing
 
-*Describe your testing approach. What was successful and what failed?*
+When testing the game, I had trouble getting the code to transfer to the microbit, and struggled to run the game on the microbit itself. I created the full game using micro blocks that ran seamlessly on the simulator but when I programmed the same code to the microbit I got a blank screen. After breaking down the code and downloading over 20 different hex files of the game, I found that the problem was occuring because I did not have the plot function for the ships included in the while loop. 
 
 ## 8. Demo
 
-*Briefly report on the results of the in-class demo.*
+The in class demo perfectly summarized and demonstrated how the game works, the inputs, outputs, and storage used, but at the time I did not have the Battleship game fully functional on the microbit, only the simulator.
 
 ## 9. Summary
 
-*Summarize your project, from idea to demo. Point out lessons learned. Mention the most important features of the micro:bit that supported your application.*
+This project as a whole taught me alot about writing code to program other devices. MicroPython required much more knoledge than just the basics of programming. MicroPython was a new language that has its own functions to accomodate the microbits features. My final game is not what I wanted it to be. I plan to continue working on this game to make it what I originally envisioned and to make it easier to understand and play.
